@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+ .color{
+  background-color: #46f0f9;
+  color: black;
+  padding: 15px 32px;
+  text-align: center;
+  font-size: 16px;
+  margin: 4px 2px;
+  border-radius: 10px;
+}
+
+button:hover {
+  box-shadow: 0 8px 16px 0 rgba(51, 255, 241, 0.849);
+}
+    
+</style>
+<body>
+    <img id="text" width="300">
+    <br><br>
+    <button class="color" onclick="prev()">Prev</button>
+    <button class="color" onclick="fun()">Next</button>  
+    <script>
+        var obj = {
+            0: "https://strapi.dhiwise.com/uploads/Blog_Common_Image_HTML_OG_Image_53083794ac.png",
+            1: "https://i.pinimg.com/736x/c3/b7/14/c3b7146a6b5eb025cdb512ba5d05aa9e.jpg",
+            2: "https://pluspng.com/img-png/javascript-vector-png-js-logo-920.png",
+        }
+        var i = 0;
+        function fun() {
+            document.getElementById("text").src = obj[i];
+            i++;
+            if (i > 2) {
+                i = 0;
+            }
+        }      
+        function prev() {
+            i--;
+            if (i < 0) {
+                i = 2;
+            }
+            document.getElementById("text").src = obj[i];
+        }
+    </script>
+</body>
+</html>
